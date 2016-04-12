@@ -1,12 +1,17 @@
 notifications:
   slack: devops-training-spb:P1BJGeIWhhy7Hk7EWNendsjR
-
 language: node_js
 node_js: '5'
 addons:
   postgresql: '9.4'
 before_script:
-  - bash install.sh
+- bash install.sh
 script:
-  - source env.sh && npm run test
-
+- source env.sh && npm run test
+deploy:
+  provider: heroku
+  api_key:
+    secure: aTFGQG95YxuNq5Mudd+f+XpLnq5H7vr+b4EOhB0fR9QR0anFkuu0JiW85VzTRqDFYNbpzMm9MqTQJtkrbTT/dKtV1QVJ05wPBkFISDM397VPCAgxO7aKcDHiTmGilTJIXL8RDudarFt5DIgX67pX2sv7KJxhPfbxhRViUCPjpDgvlJT4UIaLFpHIIHBjVf/6/s+Dkru8D4NbSHCPnqc9KGgdDgZXB0ZUmXfC5Efk+xjvTjb1wzv921iFbOcZwwSt9pFxftu0sJBYqEqMwtBd3BRzexLYtTFcZXxLlflp082SiD5BXFkim0P/lwAHXf85n2vdMUu08F5eMjLLDESW3lnkA/w2qpzoSrVo5bMWKc5DygPk5kvDTxAC7U0XJvMU6xbNVRqCQJcXA0kooVbpVvUEvQJKsbV83Wtfx9Ld6Qia/qUuXU+aKzLm0OmYBRGSx3wJRR1Jn9WNYlgZ/LgRD8brRvEOd6FKDTDzoXASBPQryde2im8dOqrbRu7TxUHxBnI8jPdb+KQC87Vavp+cXh4V606SacJud3UsBRkz0uIfcgdsvwjGXcQnXxBrThL3+LxJmGKjPuh7aRJZPGon9TY0VUyO4va3iYmAyRKYs9u+HZEqsrPS+V3e28pWJKkUJH6SAeDrJFVEApuV/EPU+IfJaYGPgzqxNNFGT1r/haI=
+  app: dry-refuge-40691
+  on:
+    repo: tireks/delivery-pipeline-training
