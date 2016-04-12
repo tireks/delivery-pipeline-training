@@ -2,3 +2,6 @@ language: node_js
 node_js:
   - "5"
 
+notifications:
+  slack: devops-training-spb:P1BJGeIWhhy7Hk7EWNendsjR
+
